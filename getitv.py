@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import config
+import getday
+
 import urllib2,httplib
 import os,datetime,string
 import sys
@@ -80,6 +82,8 @@ def readitv(sdate):
     write2db(sdate,itv_num,gqitv_num)
 
 if __name__ == '__main__':
-    for day in range(19,20):
-        readitv("2016-01-%02d" % day)
+    for day in getday.getDays("2015-12-10","2016-01-19"):
+        readitv(day)
+#    for day in range(19,20):
+#        readitv("2016-01-%02d" % day)
 
