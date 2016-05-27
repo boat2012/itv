@@ -13,6 +13,7 @@ import MySQLdb as mdb
 
 def load_page(url):
     opener = urllib2.build_opener()
+    print url
     f = opener.open(url)
     html = f.read()
     f.close()

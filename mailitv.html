@@ -1,16 +1,16 @@
-$def with (data)
+$def with (sdate,results)
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-    <title>ITV鍙戝睍鎯呭喌</title>
+    <title>ITV $sdate</title>
 </head>
 
 
 <script src="/stylesheets/sortable.js"></script>
 <body>
 <div width="40" backgorundcolor=#8CA7D9 align=center>
-
 </div>
+<div font-size="large"> $sdate </div>
 1.ITV基础用户发展情况
 <table class="sortable" width="480">
 <tr valign=top bgcolor=#8CA7D9 align=center>
@@ -21,14 +21,14 @@ $def with (data)
 <td align=center width="16%"><font color=#FFFFFF>净增用户数（户）</font></td>
 <td align=center width="16%"><font color=#FFFFFF>月累计净增用户数（户）</font></td>
 </tr>
-$for row in data :
+$for row in results['itv'] :
         <tr class='row2'>
-        <td align=center><a href="$data" target=_blank>$row[2]</a></td>
+        <td align=center><a href="" target=_blank>$row[0]</a></td>
+        <td nowrap align=center>$row[1]</td>
+        <td nowrap align=center>$row[2]</td>
         <td nowrap align=center>$row[3]</td>
         <td nowrap align=center>$row[4]</td>
         <td nowrap align=center>$row[5]</td>
-        <td nowrap align=center>$row[6]</td>
-        <td nowrap align=center>$row[7]</td>
 <!--       <td nowrap align=center><span class="changeup">{{ data.5 }}</span></td>
         <td nowrap align=center><span class="changeup">{{ data.6 }}</span></td> 
         <td nowrap align=center>
@@ -36,12 +36,26 @@ $for row in data :
         <td nowrap align=center><span class="changeup">{{ data.9|floatformat:"2"  }}</span></td>
         <td nowrap align=center><span class="changeup"></span></td>-->
         </tr>
-    
-
 </table>
-    
+2.高清ITV发展情况
+<table class="sortable" width="480">
+<tr valign=top bgcolor=#8CA7D9 align=center>
+<td align=center width="20%"><font color=#FFFFFF>地区<font></td>
+<td align=center width="16%"><font color=#FFFFFF>发展用户数（户）<font></td>
+<td align=center width="16%"><font color=#FFFFFF>月累计发展用户数（户）</font></td>
+<td align=center width="16%"><font color=#FFFFFF>计费用户数（户）</font></td>
+
+</tr>
+$for row in results['gqitv'] :
+        <tr class='row2'>
+        <td align=center><a href="" target=_blank>$row[0]</a></td>
+        <td nowrap align=center>$row[1]</td>
+        <td nowrap align=center>$row[2]</td>
+        <td nowrap align=center>$row[3]</td>
+        </tr>
+</table>
+     
     
 <div>
 </body>
 </html>
-
