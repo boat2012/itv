@@ -17,7 +17,7 @@ def logprint(text):
 if __name__ == '__main__':
    today = str(datetime.date.today()-datetime.timedelta(days=1))[0:10]
    print today,"\n 开始随机延时,2小时"
-   time.sleep(random.randint(5,7200))
+   #time.sleep(random.randint(5,7200))
    #for day in range(1,23):
    #   today1= "2016-05-%s" % day
    #   getitv.readitv(today1)
